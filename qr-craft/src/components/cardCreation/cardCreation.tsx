@@ -57,7 +57,7 @@ export default function CardCreation({
 
   return (
     <div className="inline-block bg-white rounded-xl shadow-md border border-gray-200">
-      <div className="bg-[var(--background)] py-2 px-4 border-b border-gray-200">
+      <div className="bg-[var(--background)] py-2 px-4 border-b border-gray-200 rounded-t-xl">
         <h2 className="text-xl font-semibold">Créer votre QR Code</h2>
       </div>
 

@@ -31,7 +31,7 @@ export default function ColorInput({
   return (
     <div className="flex items-center w-full max-w-md gap-4">
       {/* Label */}
-      <label className="whitespace-nowrap font-semibold">{label}</label>
+      <label className="w-30 font-semibold whitespace-nowrap">{label}</label>
 
       {/* Wrapper input + carré couleur + bouton */}
       <div className="flex items-center flex-1 border border-gray-200 rounded-lg overflow-hidden">
