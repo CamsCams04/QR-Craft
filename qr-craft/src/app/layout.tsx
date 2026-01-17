@@ -15,9 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen font-sans bg-[var(--background)] text-[var(--foreground)] flex flex-col justify-between">
+      <body className="min-h-screen font-sans bg-[var(--background)] text-[var(--foreground)] flex flex-col">
         <Header />
-        <main>{children}</main>
+        <main className="flex flex-col items-center mt-6 px-4 h-full flex-grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex flex-row justify-between items-center w-full py-5 px-8 border-b-3 border-gray-200">
+    <header className="flex flex-row justify-between items-center w-full py-4 px-8 border-b-3 border-gray-200">
       <div className="flex gap-4 items-center">
         <Image
           src="/assets/logo.png"
