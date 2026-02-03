@@ -182,9 +182,9 @@ export default function Previsualisation({
   );
 
   return (
-    <div className="inline-block w-full bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden flex flex-col items-center">
+    <div className="inline-block w-full h-140 bg-white rounded-xl shadow-md border border-gray-200 overflow-auto flex flex-col items-center">
       <div className="bg-[var(--background)] py-2 px-4 border-b border-gray-200 rounded-t-xl w-full">
-        <h2 className="text-xl font-semibold text-center">Prévisualisation</h2>
+        <h2 className="text-xl font-semibold">Prévisualisation</h2>
       </div>
 
       <div className="flex justify-center py-6 w-full">

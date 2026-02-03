@@ -1,10 +1,12 @@
 import CustomQrCode from "../customQrCode/customQrCode";
 import LienURL from "../lienURL/lienURL";
 import TabView from "../tabView/tabView";
+import UploadImg from "../uploadImg/uploadImg";
 
 type CardCreationProps = {
   url: string;
   onUrlChange: (url: string) => void;
+  onImageChange: (dataUrl: string) => void;
   cornerColor: string;
   setCornerColor: (c: string) => void;
   dotColor: string;
@@ -19,6 +21,7 @@ type CardCreationProps = {
 export default function CardCreation({
   url,
   onUrlChange,
+  onImageChange,
   cornerColor,
   setCornerColor,
   dotColor,
@@ -50,9 +53,69 @@ export default function CardCreation({
         </>
       ),
     },
-    { label: "Image", content: <div>Image</div> },
-    { label: "PDF", content: <div>PDF</div> },
-    { label: "Texte", content: <div>Texte</div> },
+    { 
+      label: "Image", 
+      content: (
+        <>
+          <UploadImg onImageChange={onImageChange} />
+
+          <hr className="my-6 border-gray-300" />
+
+          <CustomQrCode
+            cornerColor={cornerColor}
+            setCornerColor={setCornerColor}
+            dotColor={dotColor}
+            setDotColor={setDotColor}
+            bgColor={bgColor}
+            setBgColor={setBgColor}
+            onLogoChange={setLogoFile}
+            onStyleChange={onStyleChange}
+          />
+        </>
+      )
+    },
+    { 
+      label: "PDF", 
+      content: (
+        <>
+          <LienURL value={url} onChange={onUrlChange} />
+
+          <hr className="my-6 border-gray-300" />
+
+          <CustomQrCode
+            cornerColor={cornerColor}
+            setCornerColor={setCornerColor}
+            dotColor={dotColor}
+            setDotColor={setDotColor}
+            bgColor={bgColor}
+            setBgColor={setBgColor}
+            onLogoChange={setLogoFile}
+            onStyleChange={onStyleChange}
+          />
+        </>
+      )
+    },
+    { 
+      label: "Texte", 
+      content: (
+        <>
+          <LienURL value={url} onChange={onUrlChange} />
+
+          <hr className="my-6 border-gray-300" />
+
+          <CustomQrCode
+            cornerColor={cornerColor}
+            setCornerColor={setCornerColor}
+            dotColor={dotColor}
+            setDotColor={setDotColor}
+            bgColor={bgColor}
+            setBgColor={setBgColor}
+            onLogoChange={setLogoFile}
+            onStyleChange={onStyleChange}
+          />
+        </>
+      )
+    },
   ];
 
   return (

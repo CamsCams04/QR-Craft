@@ -6,6 +6,7 @@ import Previsualisation from "@/components/previsualisation/previsualisation";
 
 export default function Home() {
   const [url, setUrl] = useState("");
+  const [qrImageData, setQrImageData] = useState<string>("");
   const [cornersColor, setCornersColor] = useState("#000000");
   const [dotColor, setDotColor] = useState("#000000");
   const [bgColor, setBgColor] = useState("#FFFFFF");
@@ -17,6 +18,7 @@ export default function Home() {
       <CardCreation
         url={url}
         onUrlChange={setUrl}
+        onImageChange={setQrImageData}
         cornerColor={cornersColor}
         setCornerColor={setCornersColor}
         dotColor={dotColor}
@@ -28,14 +30,16 @@ export default function Home() {
         onStyleChange={setQrStyle}
       />
 
-      <Previsualisation
-        data={url}
-        cornerColor={cornersColor}
-        dotColor={dotColor}
-        bgColor={bgColor}
-        logoFile={logoFile}
-        styleOptions={qrStyle}
-      />
+      <div className="sticky top-20 w-full h-140">
+        <Previsualisation
+          data={qrImageData || url}          
+          cornerColor={cornersColor}
+          dotColor={dotColor}
+          bgColor={bgColor}
+          logoFile={logoFile}
+          styleOptions={qrStyle}
+        />
+      </div>
     </div>
   );
 }
